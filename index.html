@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/lnb,gng.css">
+	<link rel="stylesheet" href="./css/svg.css">
+	<link rel="stylesheet" href="./css/section.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto&display=swap" rel="stylesheet">
+
+   
+	<!-- font-family: 'Roboto', sans-serif; 
+	font-family: 'Noto Sans KR', sans-serif;-->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script src="skrollr-master/src/skrollr.js"></script>
+    <title>Choi Na Eun Portfolio</title>
+    <script>//scroll motion
+	$(function(){
+		var motion = $('.motion');
+		 var $win = $(window);
+		function checkInView() {
+			var wHeight = $win.height();
+			var wTopPos = $win.scrollTop();
+			var wBotPos = (wTopPos + wHeight);
+
+			$.each(motion , function() {
+				var $this = $(this);
+				var elHeight = $this.outerHeight();
+				var elTopPos = $this.offset().top+200;
+				var elBotPos = (elTopPos + elHeight);
+
+				if(elTopPos <= wBotPos){ $this.addClass('motionV')};
+			});
+		}
+		$win.on('scroll resize', checkInView).trigger('scroll');
+	})
+    </script>
+    <script>
+        $(function(){
+            var lnb = $('.lnb');
+            $(window).scroll(function(){
+                var winS = $(window).scrollTop();
+				var sec2 = $('.section2').offset().top - 300;
+				console.log(winS);
+				console.log(sec2);
+                nowindex = parseInt( winS  / $(this).height());
+                lnb.find('li').eq(nowindex).addClass('on').siblings().removeClass('on');
+
+            });
+        })
+    </script>
+    <style>
+        .sec{
+            background: url('./img/bg1.png') repeat;
+            
+        }
+        .sec2{
+            position:fixed;
+            left:0;
+            top:0;
+            height: 100%;
+            width: 100%;
+            background: url('./img/bg2.png') repeat left 0% / 120% 120%;
+            z-index: -1;
+            opacity: 0.3;
+            
+        }
+        /* .wrap{background: #000000;} */
+       
+       
+        .svg{
+            height: 100vh;
+            background:url('') no-repeat left top / cover;;
+        }
+        #nani{
+            position: static;
+            transform: translate(0, -5%);
+            margin: 0 auto;
+            height: 100vh;
+            position: relative;
+			left:0;
+			margin-right: 27%;
+
+        }
+       
+        .motion.up{transform: translateY(100px); transition:transform .5s ease-in-out, opacity .5s ease; opacity: 0}
+		.motionV.up{transform: translateY(0); opacity: 1;}
+		
+		.motion.side_r{transform: translateX(200px); transition:transform 1s ease-in-out, opacity .5s ease; opacity: 0}
+		.motionV.side_r{transform: translateX(0); opacity: 1;}
+		
+		.motion.side_l{transform: translateX(-200px); transition:transform 1s ease-in-out, opacity .5s ease; opacity: 0}
+        .motionV.side_l{transform: translateX(0); opacity: 1;}
+        .section5{margin-bottom:0;}
+        
+    </style>
+
+</head>
+<body>
+  <nav class="lnb">
+	<ul>
+		<li>
+			<a href="" class="lnb_about">	
+				<span class="lnb_dot"></span>	
+			</a>
+			<span class="lnb_txt">Main</span>
+		</li>
+		<li>
+			<a href="" class="lnb_about">	
+				<span class="lnb_dot"></span>	
+			</a>
+			<span class="lnb_txt">About Me</span>
+		</li>
+		<li>
+			<a href="" class="lnb_portfolio">
+				<span class="lnb_dot"></span>
+			</a>
+			<span class="lnb_txt">Skills</span>	
+		</li>
+		<li>
+			<a href="" class="lnb_skills">	
+				<span class="lnb_dot"></span>
+			</a>
+			<span class="lnb_txt">Portfolio</span>
+		</li>
+		<!-- <li>
+			<a href="" class="lnb_skills">	
+				<span class="lnb_dot"></span>
+			</a>
+			<span class="lnb_txt">Effects</span>
+		</li> -->
+		<li>
+			<a href="" class="lnb_contact">
+				<span class="lnb_dot"></span>
+			</a>
+			<span class="lnb_txt">Contact</span>	
+		</li>
+	</ul>	
+  </nav>
+  <div class="wrap" data-0="background:rgb(0,0,0)" data-650="background:rgb(255,255,255)">
+		<div class="sec" data-0="background-position-y:0%" data-end="background-position-y:-10%">
+			<div class="sec2" data-0="background-position-y:0%" data-end="background-position-y:1000%"></div>
+			<header id="gnb">
+					<a href="" class="logo">
+						<img src="./img/untitled-1.png" alt="">
+					</a>
+					<ul>
+						<li>
+							<a href="">Main</a>
+						</li>
+						<li>
+							<a href="">About Me</a>
+						</li>
+						<li>
+							<a href="">Skills</a>
+						</li>
+						<li>
+							<a href="">Portfolio</a>
+						</li>
+						<li>
+							<a href="">Contact</a>
+						</li>
+					</ul> 
+			</header>
+			<div class="svg section section0">
+				<svg version="1.1" id="nani" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					width="540.727px" height="210.484px" viewBox="0 0 540.727 210.484" enable-background="new 0 0 540.727 210.484"
+					xml:space="preserve">
+				<g>
+					<path fill="none" d="M228.935,174.15v4.213c0,9.129,0.48,15.008,1.448,17.641c0.963,2.633,2.805,3.949,5.529,3.949
+						c2.719,0,5.266-2.238,7.636-6.715c2.37-4.475,3.555-10.662,3.555-18.562v-5.706v-18.78h-1.844
+						C234.374,150.19,228.935,158.179,228.935,174.15z"/>
+					<path fill="none" d="M306.19,204.822h0.294v-0.225C306.387,204.674,306.29,204.75,306.19,204.822z"/>
+					<path fill="#F6CF63" d="M135.943,36.844c-10.479,0-19.158,1.519-26.058,4.539c1.664,4.064,2.981,8.306,3.9,12.697
+						c4.048,0.409,6.904,2.46,8.562,6.167c1.856,4.17,2.788,13.398,2.788,27.689v116.117h-14.291v6.432h55.062V43.471
+						C157.911,39.062,147.931,36.844,135.943,36.844z"/>
+					<path fill="#CFBCDB" d="M191.907,210.484h17.583v-0.021c-6.789-0.125-12.646-1.031-17.583-2.707V210.484z"/>
+					<path fill="#6AC6E1" d="M407.167,64.17c-13.427,0-23.442,2.808-30.055,8.415c-6.611,5.611-11.524,13.026-14.727,22.24v-27.65
+						h-72.43v5.41h16.528v23.458h60.807c0.737-1.668,1.556-3.277,2.458-4.824c4.907-8.416,10.565-12.623,16.981-12.623
+						c4.207,0,7.109,1.756,8.714,5.26c1.038,2.272,1.738,6.342,2.104,12.187h54.266C446.784,74.803,431.908,64.17,407.167,64.17z"/>
+					<path fill="#0077A0" d="M451.938,127.707H397.85v77.116h-12.321v5.41h34.324c-1.798-6.363-2.78-13.07-2.78-20.01
+						C417.072,163.808,431.017,140.658,451.938,127.707z"/>
+					<path fill="#0077A0" d="M345.583,210.232h29.726v-5.41h-12.923V192.82C356.053,194.549,350.259,201.957,345.583,210.232z"/>
+					<polygon points="306.484,196.016 306.481,196.018 306.484,196.029 	"/>
+					<path d="M306.322,210.232h0.162v-0.615C306.434,209.824,306.378,210.027,306.322,210.232z"/>
+					<path fill="#0077A0" d="M330.386,144.317c0,6.997-2.557,13.394-6.78,18.319c-0.136,0.16-0.273,0.318-0.413,0.477
+						c-0.065,0.072-0.13,0.146-0.196,0.219c-4.228,4.696-9.995,7.979-16.512,9.043v23.641v0.014c0.539,2.176,0.83,4.451,0.83,6.793
+						c0,2.344-0.291,4.617-0.83,6.795v0.615h14.86c5.372-10.293,13.54-22.645,24.753-30.949c8.349-6.182,13.325-14.042,16.288-21.48
+						v-30.097h-37.424C328.37,132.364,330.386,138.104,330.386,144.317z"/>
+					<path fill="#6AC6E1" d="M525.629,125.635V82.16H459.58v4.853h15.904v31.279c4.865-1.014,9.905-1.553,15.071-1.553
+						C503.257,116.739,515.206,119.963,525.629,125.635z"/>
+					<path fill="#3B9048" d="M284.096,90.553c-7.989-7.109-22.426-10.664-43.312-10.664c-24.431,0-40.714,4.793-48.876,14.367v34.831
+						l16.49,5.042c6.668,0,12.197-1.884,16.587-5.661c4.386-3.773,6.583-8.248,6.583-13.428c0-5.175-0.703-9.61-2.105-13.296h-6.583
+						c-1.053-2.983-1.58-5.924-1.58-8.82c0-2.896,1.271-5.175,3.818-6.846c2.542-1.666,5.396-2.501,8.557-2.501
+						c5.266,0,8.82,2.855,10.664,8.557c0.354,1.099,0.675,2.405,0.961,3.91h43.425C287.365,93.938,285.831,92.097,284.096,90.553z"/>
+					<path fill="#1E5C93" d="M483.861,59.017c4.012-11.471,11.237-27.272,23.063-38.169c2.11-1.944,3.938-3.992,5.544-6.095
+						c-3.198-0.876-6.819-1.338-10.911-1.338c-8.989,0-15.683,2.338-20.085,7.009c-4.405,4.676-6.604,10.606-6.604,17.793
+						c0,7.191,2.021,13.21,6.064,18.063C481.785,57.302,482.766,58.21,483.861,59.017z"/>
+					<path fill="#126C84" d="M505.396,63.395c7.454-0.595,13.099-2.871,16.92-6.845c4.489-4.672,6.739-10.918,6.739-18.737
+						c0-2.365-0.24-4.545-0.669-6.581c-0.715,0.383-1.466,0.672-2.257,0.851C516.478,34.261,509.492,50.5,505.396,63.395z"/>
+					<path fill="#F19999" d="M52.532,40.417H0v6.432h19.172v18.815c4.176-3.249,8.723-6.166,13.59-8.403
+						C41.804,53.104,48.125,46.806,52.532,40.417z"/>
+					<path fill="#DD5C5B" d="M101.086,46.849c-7.668,6.67-13.365,15.485-17.08,26.439V40.417h-9.328H52.532
+						c-4.407,6.389-10.729,12.687-19.771,16.844c-4.867,2.238-9.414,5.154-13.59,8.403v30.235v43.198v64.956H0v6.432h58.357
+						c-6.844-5.869-11.186-14.572-11.186-24.293c0-17.674,14.328-32,32-32c1.644,0,3.258,0.125,4.834,0.363v-25.166v-23.945
+						c0-14.292,2.843-26.44,8.54-36.443c5.69-10.004,12.255-15.006,19.693-15.006c0.536,0,1.048,0.036,1.547,0.086
+						c-0.919-4.391-2.236-8.632-3.9-12.697C106.533,42.851,103.594,44.668,101.086,46.849z"/>
+					<path fill="#F19999" d="M525.629,205.631v-18.4V171.53v-45.895c-10.423-5.672-22.372-8.896-35.073-8.896
+						c-5.166,0-10.206,0.539-15.071,1.553v87.338h-4.904v-0.809h-16.829v-77.116v-1.076c-0.608,0.353-1.215,0.706-1.812,1.076
+						c-20.922,12.952-34.866,36.102-34.866,62.516c0,6.939,0.982,13.646,2.78,20.01h40.806v0.252h24.989h13.193h41.886v-4.854H525.629z"
+						/>
+					<path fill="#CFBCDB" d="M172.163,177.83c0-12.774,4.957-21.545,14.876-26.314c0.926-0.445,1.913-0.862,2.932-1.266v-20.118
+						c-7.302-3.162-10.961-9.925-10.961-20.313c0-9.704,3.527-17.279,10.581-22.728c-1.737-21.339-9.637-35.875-23.684-43.62v167.014h26
+						v-2.729C178.751,203.291,172.163,193.322,172.163,177.83z"/>
+					<path fill="#CFBCDB" d="M185.753,112.274c0,7.585,2.064,13.176,6.154,16.812V94.255
+						C187.812,99.059,185.753,105.061,185.753,112.274z"/>
+					<path fill="#CFBCDB" d="M178.907,178.625c0,12.264,4.34,20.98,13,26.162v-50.87C183.241,158.743,178.907,166.978,178.907,178.625z"
+						/>
+					<path fill="#F6CF63" d="M453.751,126.631V114.36c0-6.801-0.653-12.899-1.937-18.318h-54.266c0.199,3.177,0.301,6.871,0.301,11.104
+						v20.56h54.089C452.536,127.337,453.143,126.983,453.751,126.631z"/>
+					<path fill="#F6CF63" d="M306.484,116.306c5.125,0.836,9.785,3.046,13.599,6.235c0.024,0.02,0.049,0.039,0.072,0.058
+						c0.103,0.087,0.203,0.176,0.306,0.265c1.683,1.432,3.194,3.057,4.501,4.843h37.424v-5.833c0-9.812,1.635-18.422,4.905-25.832
+						h-60.807V116.306z"/>
+					<path fill="#EBD45B" d="M295.342,116.692c-1.057-8.588-3.27-15.462-6.618-20.65h-43.425c1.201,6.312,1.804,16.196,1.804,29.66
+						v2.004h31.747C282.786,122.267,288.6,118.28,295.342,116.692z"/>
+					<path fill="#F08D8E" d="M47.172,186.191c0,9.721,4.342,18.424,11.186,24.293h40.637v-6.432H84.006v-49.499
+						c-1.576-0.238-3.19-0.363-4.834-0.363C61.5,154.191,47.172,168.517,47.172,186.191z"/>
+					<path fill="#26A0BD" d="M322.996,163.332c0.066-0.072,0.131-0.146,0.196-0.219c0.14-0.158,0.277-0.316,0.413-0.477
+						c4.224-4.926,6.78-11.322,6.78-18.319c0-6.213-2.016-11.953-5.424-16.61c-1.307-1.786-2.818-3.411-4.501-4.843
+						c-0.103-0.088-0.203-0.178-0.306-0.265c-0.023-0.02-0.048-0.039-0.072-0.058c-3.813-3.189-8.474-5.399-13.599-6.235v0.166v11.235
+						v44.456v0.213C313.001,171.311,318.769,168.028,322.996,163.332z"/>
+					<path fill="#26A0BD" d="M278.85,127.707c-3.384,4.676-5.384,10.419-5.384,16.633c0,13.702,9.701,25.137,22.609,27.816v-0.352
+						v-42.152c0-0.662-0.017-1.299-0.026-1.946c-0.057-3.82-0.278-7.397-0.675-10.715c-0.012-0.098-0.021-0.201-0.032-0.299
+						C288.6,118.28,282.786,122.267,278.85,127.707z"/>
+					<path fill="#EE8383" d="M346.098,179.283c-11.213,8.305-19.381,20.656-24.753,30.949h24.238
+						c4.676-8.275,10.47-15.684,16.803-17.412v-35.017C359.423,165.242,354.446,173.102,346.098,179.283z"/>
+					<path fill="#1F2A65" d="M506.925,20.848c-11.826,10.897-19.052,26.698-23.063,38.169c4.103,3.023,9.905,4.542,17.427,4.542
+						c1.429,0,2.793-0.059,4.108-0.164c4.096-12.895,11.081-29.134,20.733-31.312c0.791-0.179,1.542-0.468,2.257-0.851
+						c-0.986-4.694-3.083-8.535-6.34-11.481c-2.547-2.299-5.755-3.95-9.578-4.998C510.863,16.855,509.035,18.903,506.925,20.848z"/>
+					<path fill="#0077A0" d="M306.484,204.822v4.795c0.539-2.178,0.83-4.451,0.83-6.795c0-2.342-0.291-4.617-0.83-6.793v8.568V204.822z"
+						/>
+					<path fill="#3B9048" d="M306.484,204.822h-0.294c0.1-0.072,0.196-0.148,0.294-0.225v-8.568c-0.001-0.004-0.002-0.008-0.003-0.012
+						c-0.857,0.5-1.776,0.775-2.771,0.775c-5.093,0-7.636-4.562-7.636-13.691v-2.791v-8.154c-12.908-2.679-22.609-14.115-22.609-27.816
+						c0-6.214,2-11.957,5.384-16.633h-31.747v18.271h-7.636c-20.538,0-35.768,2.328-45.684,6.978c-0.647,0.304-1.271,0.626-1.876,0.963
+						v50.87c6.339,3.793,14.989,5.697,25.969,5.697c8.774,0,15.444-1.578,20.01-4.738c3.913-2.709,6.98-6.717,9.217-12.01
+						c0.372-0.879,0.728-1.785,1.053-2.736c0.662,2.723,1.741,5.145,3.19,7.295c5.463,8.117,16.495,12.189,33.145,12.189
+						c1.944,0,3.789-0.088,5.551-0.252h16.281c0.056-0.205,0.111-0.408,0.162-0.615V204.822z M247.103,168.97v5.706
+						c0,7.9-1.185,14.088-3.555,18.562c-2.37,4.477-4.917,6.715-7.636,6.715c-2.725,0-4.566-1.316-5.529-3.949
+						c-0.968-2.633-1.448-8.512-1.448-17.641v-4.213c0-15.971,5.439-23.96,16.324-23.96h1.844V168.97z"/>
+				</g>
+				</svg> 
+
+			    <p class="nani_txt">
+					<span id="texts"></span><span class="bar">ㅣ</span>
+					<!-- <span id="texts">Passion, Intensely, Sincerity</span> -->
+				</p>
+			</div>
+			<section class="section section1 motion up">
+				<div class="article">
+					<div class="sec1_top">
+						<div class="face_img">
+							<span class="nani_img">
+								<img src="" alt="">
+							</span>
+							<h3>Choi Na Eun</h3>
+							<h3>최나은</h3>
+						</div>
+					</div>
+					<div class="sec1_bot">
+						<div class="info">
+								<div class="infobox bd">
+									<i class="info_icn icn_bd"></i>
+									<div class="info_txt bd">
+										<span class="info_title">Birth Date</span>
+										<span class="info_sub">1993.08.31</span>
+									</div>	
+								</div>
+								<div class="infobox  address">
+									<i class="info_icn icn_address"></i>
+									<div class="info_txt">
+										<span class="info_title">Address</span>
+										<span class="info_sub">경기도 성남시 분당구</span>
+									</div>
+								</div>
+								<div class="infobox  mobile">
+									<i class="info_icn icn_mobile"></i>
+									<div class="info_txt">
+										<span class="info_title">Mobile</span>
+										<span class="info_sub"><a href="tel:010 9904 9854">010 9904 9854</a></span>
+									</div>
+								</div>
+								<div class="infobox  email">
+									<i class="info_icn icn_email"></i>
+									<div class="info_txt">
+										<span class="info_title">E-mail</span>
+										<span class="info_sub"><a href="mailto:naninani0216@gmail.com">naninani0216@gmail.com</a></span>
+									</div>	
+								</div>
+						</div>
+						<div class="education">
+							<i class="icn_education"></i>
+							<h3>Experience</h3>
+						</div>
+						<div class="edu_txt">
+							<div>
+								<span class="year">2012 - 2018</span>
+								<span>바우하우스 미술학원 강사</span>
+							</div>
+							<div>
+								<span class="year">2017</span>
+								<span>홍익대학교 도예유리과 학사 졸업</span>
+							</div>
+							<div>
+								<span class="year">2019</span>
+								<span>굿잡 아카데미 웹퍼블리셔 과정 수료</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</section>	
+			<section class="section section2 motion up">
+				<h1 class="sec_title sec_title2">Skills</h1>
+				<article class="article skills_wrap">
+					<div class="skills html">
+						<span class="skill_txt">HTML</span>
+						<span class="wave html_wave"></span>
+					</div>
+					<div class="skills css">
+						<span class="skill_txt">CSS</span>
+						<span class="wave css_wave"></span>
+					</div>
+					<div class="skills javascript">
+						<span class="skill_txt">JS</span>
+						<span class="wave javascript_wave"></span>
+					</div>
+					<div class="skills jquery">
+						<span class="skill_txt">Jquery</span>
+						<span class="wave jquery_wave"></span>
+					</div>
+					<div class="skills photoshop">
+						<span class="skill_txt">PS</span>
+						<span class="wave photoshop_wave"></span>
+					</div>
+					<div class="skills illust">
+						<span class="skill_txt">AI</span>
+						<span class="wave illust_wave"></span>
+					</div>
+				</article>
+				<div class="skills_persent">
+					<span id="counter1">0%</span>
+					<span id="counter2">0%</span>
+					<span id="counter3">0%</span>
+					<span id="counter4">0%</span>
+					<span id="counter5">0%</span>
+					<span id="counter6">0%</span>
+				</div>
+			</section>
+			<section class="section section3 ">
+				<h1 class="sec_title sec_title3">Portfolio</h1>
+				<article class="article article1 ">
+						<div class="p_txt motion side_l">
+							<h3 class="p_title">Lotte Museum</h3>
+							<ul class="p_subtxt">
+								<li>
+									<span>구성</span>
+									<span>메인페이지</span>
+								</li>
+								<li>
+									<span>퍼블리싱</span>
+									<span>100%</span>
+								</li>
+								<li>
+									<span>코딩</span>
+									<span>3주</span>
+								</li>
+								<!-- <li>
+									<span>javascript와 jquery를 활용하여 역동적인 페이지를<br>구현하고자 했습니다.</span>
+								</li>
+								<li>
+									<span>기존의 사이트와 다르게 WebGL을 사용하여 역동성을 추가하였습니다.</span>
+								</li>
+								<li>
+									<span>스크롤 이벤트를 활용하여 페이지가 넘어가도록 구현하였습니다.</span>
+								</li>
+								<li>
+									<span>jquery플러그인을 활용하여 슬라이드를 만들었습니다.</span>
+								</li> -->
+							</ul>
+							<p class="min_txt min1">* WebGL사용으로 Chrome에서만 지원됩니다.</p>
+							<p class="min_txt">*포트폴리오는 기존에 있는 사이트를 카피하여 구현하는 방식으로<br>제작하였습니다.개인적인 작업물로 해당기업과는관련없습니다.
+							</p>
+							<div class="p_button">
+								<a href="">
+									<span>소스보기</span>
+								</a>
+								<a href="">
+									<span>페이지 이동</span>
+								</a>
+							</div>
+						</div>
+						<div class="p_img motion side_r">
+							<span class="text_out">lottemuseum-portfolioimg</span>
+						</div>
+				</article>
+				<article class="article article2 ">
+						<div class="p_img motion side_r">
+							<span class="text_out">hanwha-portfolioimg</span>
+						</div>
+						<div class="p_txt motion side_l">
+								<h3 class="p_title">Hanwha Cemical</h3>
+								<ul class="p_subtxt">
+									<li>
+										<span>구성</span>
+										<span>메인페이지</span>
+									</li>
+									<li>
+										<span>퍼블리싱</span>
+										<span>100%</span>
+									</li>
+									<li>
+										<span>코딩</span>
+										<span>2주</span>
+									</li>
+									<!-- <li>
+										<span>제이쿼리 플러그인을 활용하여 메인슬라이드를<br>제작 하였습니다.</span>
+									</li>
+									<li>
+										<span>서브슬라이드를 직접 코딩했습니다.</span>
+									</li>
+									<li>
+										<span>오른쪽 상단의 검색 메뉴를 클릭에 따라 정보가 바뀌도록<br>제작하였습니다.</span>
+									</li>
+									<li>
+										<span>스크롤 애니메이션을 추가해 페이지에 역동성을 더했습니다.</span>
+									</li> -->
+								</ul>
+								<p class="min_txt">*포트폴리오는 기존에 있는 사이트를 카피하여 구현하는 방식으로<br>제작하였습니다.개인적인 작업물로 해당기업과는관련없습니다.
+								</p>
+								<div class="p_button">
+									<a href="">
+										<span>소스보기</span>
+									</a>
+									<a href="">
+										<span>페이지 이동</span>
+									</a>
+								</div>
+						</div>
+				</article>
+				<article class="article article3 ">
+					<div class="p_txt motion side_l">
+						<h3 class="p_title">Portfolio Page</h3>
+						<ul class="p_subtxt">
+							<li>
+								<span>구성</span>
+								<span>원페이지</span>
+							</li>
+							<li>
+								<span>퍼블리싱</span>
+								<span>100%</span>
+							</li>
+						    <li>
+								<span>디자인</span>
+								<span>100%</span>
+							</li>
+							<li>
+								<span>코딩</span>
+								<span>2주</span>
+							</li>
+						</ul>
+						<div class="p_button">
+							<a href="">
+								<span>소스보기</span>
+							</a>
+							<a href="">
+								<span>페이지 이동</span>
+							</a>
+						</div>
+					</div>
+					<div class="p_img motion side_r">
+						<span class="text_out">portofolio_page-portfolioimg</span>
+					</div>
+				</article>
+			</section>
+			<!-- <section class="section section4">
+				<h1 class="sec_title sec_title1">Effects</h1>
+				<article class="article">
+					<h3>CSS3 hover Effects</h3>
+					<figure class="hover_action hover1">
+						<img src="./img/6.jpg" alt="hovereffect_img1">
+						<figcaption class="hover1_txt"> 
+							<div class="w_box l_box"></div>
+							<div class="w_box r_box"></div>
+							<h2>Crazy Layla</h2>
+							<p>When Layla appears, she brings an eternal summer along.</p>	
+						</figcaption>
+					</figure>
+					<figure class="hover_action hover2"> 
+						<img src="./img/9.jpg" alt="hovereffect_img2">
+						<figcaption class="hover2_txt"> 
+							<div class="top"></div>
+							<div class="right"></div>
+							<div class="bottom"></div>
+							<div class="left"></div>
+							<h2>Warm Oscar</h2>   
+							<p>Oscar is a decet man. He used to clean porches with pleasure</p> 
+						</figcaption>
+					</figure>
+						<figure class="hover_action hover3"> 
+						<img src="./img/12.jpg" alt="hovereffect_img3">
+						<div class="y_box"></div>
+						<div class="x_box"></div>
+						<h2>Warm Oscar</h2>   
+						<p>Oscar is a decet man. He used to clean porches with pleasure</p> 		
+					</figure>	
+					<h3>CSS3 animation Effects</h3>	
+					<div class="motion penguin_effect">
+						<div class="wrap">
+							<span class="text_out">icecream_truck_with_penguin</span>
+							<div class="wheel_l">
+								<span class="text_out">wheel_left</span>
+							</div>
+							<div class="wheel_r">
+								<span class="text_out">wheel_right</span>
+							</div>
+							<div class="truck">
+								<span class="text_out">icecream truck</span>
+							</div>
+							<div class="arm">
+								<span class="text_out">pengiun_arm</span>
+							</div>
+							<div class="penguin">
+								<span class="text_out">pengiun</span>
+							</div>
+							<div class="window-l">
+								<span class="text_out">window-left</span>
+							</div>
+							<div class="window-r">
+								<span class="text_out">window-right</span>
+							</div>
+							<div class="um1">
+								<span class="text_out">parasol</span>
+							</div>
+							<div class="um">
+								<span class="text_out">parasol</span>
+							</div>
+						</div>
+					</div>	   
+				</article>
+			</section> -->
+			<section class="section section5">
+				<div class="section_wrap">
+					<h1>Thank you for visiting!</h1>
+					<i class="nani_face">
+						<span></span>
+						<span class="text_out">moving_face_icon</span>
+					</i>
+					<span class="phone_num">
+						<a href="tel:010 9904 9854">010 9904 9854</a>
+					</span>
+					<div class="email_address">
+						<!-- <span> naninani0216@gmail.com</span> -->
+						<input id="foo" value="naninani0216@gmail.com">
+						<button class="btn" data-clipboard-target="#foo">
+							<i></i>
+						</button>
+					</div>
+					<div class="copied">
+						<span>Copied!</span>
+					</div>
+				</div>
+			</section>
+		</div> 		
+  </div>
+
+</body>
+<script src="./js/write.js"></script>
+ <script src="./js/timer.js"></script> 
+<script>
+        new Clipboard('.btn');
+      </script>
+      <script src="./js/click.js"></script>	
+      <script type="text/javascript">
+        $(window).load(function(){
+        var s = skrollr.init({
+            edgeStrategy: 'set',
+            easing: {
+                WTF: Math.random,
+                inverted: function(p) {
+                    return 1-p;
+                }
+            }
+        });
+    
+    })
+        </script>
+      
+</html>
